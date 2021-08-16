@@ -32,8 +32,7 @@ class SearchImage :
             result.append(str(img[0]))      
         return result
 
-if __name__ == "main":
-    print("")
+
 
 
 

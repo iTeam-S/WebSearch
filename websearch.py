@@ -25,10 +25,10 @@ class WebSearch :
             result.append(link["href"])
 
         return result
-if __name__ == "main":
-    web = WebSearch()
-    x= web.google("Je suis malade")
-    print("a")
-    print(x)
+# if __name__ == "main":
+web = WebSearch()
+x= web.google("Je suis malade")
+print("a")
+print(x)
 
 
