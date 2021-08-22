@@ -33,7 +33,6 @@ class WebSearch :
 
         return result 
 
-    @classmethod
     def search_page(self,query):    
         """
         Une fonction qui récupère toutes les liens des  
@@ -48,8 +47,4 @@ class WebSearch :
         for link in a :
             result.append(link["href"])
         return result
-
-if __name__ == "main":
-    print("")
-
 
