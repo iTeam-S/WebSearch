@@ -1,15 +1,13 @@
 import urllib.parse
 from bs4 import BeautifulSoup
-from utils import *
 
-class websearch :
+class WebSearch :
     """
     Une classe qui va récupérer les liens de résultat 
     d'une recherche de google.
     """
     def __init__(self) :
         self.source = 'www.google.com'
-
 
     @classmethod
     def search_image(self, query):
@@ -50,7 +48,6 @@ class websearch :
         for link in a :
             result.append(link["href"])
         return result
-
 
 if __name__ == "main":
     print("")
