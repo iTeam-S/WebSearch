@@ -11,8 +11,9 @@ class SearchImage :
     def __init__(self) :
         self.source = 'www.yahoo.com'
     
+    @classmethod
     def yahoo(self, keywords):
-        """
+        """ 
         Une fonction qui récupère toutes les liens des images 
         resultats selon les mot-clé en paramètre.
         """
@@ -29,10 +30,9 @@ class SearchImage :
         for li in lis:
             img = li.find("img")
             img = str(img["data-src"]).split("&pid")
-            result.append(str(img[0]))      
+            result.append(str(img[0]))  
+
         return result
 
-
-
-
-
+if __name__ == "main":
+    print("")

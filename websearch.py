@@ -10,6 +10,7 @@ class WebSearch :
     def __init__(self) :
         self.source = 'www.google.com'
 
+    @classmethod
     def google(self,keywords):    
         """
         Une fonction qui récupère toutes les liens des  
@@ -25,10 +26,7 @@ class WebSearch :
             result.append(link["href"])
 
         return result
-# if __name__ == "main":
-web = WebSearch()
-x= web.google("Je suis malade")
-print("a")
-print(x)
+if __name__ == "main":
+    print("")
 
 
