@@ -11,20 +11,19 @@ class WebSearch :
         self.source = 'www.google.com'
 
     @classmethod
-    def google(self,keywords):    
+    def google(self,query):    
         """
         Une fonction qui récupère toutes les liens des  
         resultats selon les mot-clé en paramètre.
         """
         result = []
-        url = "https://www.google.com/search?client=firefox-b-d&q=" + urllib.parse.quote(keywords)
-
-        soup = get(url)
+        url = "https://www.google.com/search?client=firefox-b-d&q=" + urllib.parse.quote(query)
+        requete = get(url)
+        soup = BeautifulSoup(requete.text, 'html.parser')
         a = soup.find_all("a")
 
         for link in a :
             result.append(link["href"])
-
         return result
 if __name__ == "main":
     print("")
