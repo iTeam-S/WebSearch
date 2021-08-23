@@ -22,9 +22,9 @@ for wp in webpages[:5]:
    
 ```
    https://mg.linkedin.com/in/gaetanj
-   https://portfolio.iteam-s.mg/%3Fu%3Dgaetan
+   https://portfolio.iteam-s.mg/?u=gaetan
    https://github.com/gaetan1903
-   https://medium.com/%40gaetan1903
+   https://medium.com/@gaetan1903
    https://gitlab.com/gaetan1903
 ```
    
