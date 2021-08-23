@@ -44,8 +44,7 @@ class WebSearch :
         a = soup.find_all("a")
         for link in a :
             tmp = link["href"][7:-1].split('&')
-
             if tmp[0].startswith('http'):
-                result.append(tmp[0])
+                result.append(urllib.parse.unquote(tmp[0]))
         return result
 
