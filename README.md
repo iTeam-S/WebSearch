@@ -1,6 +1,6 @@
 # WebSearch
 
-> Module python permettant de faire différent recherche sur le Web.
+> Module python permettant de faire différente recherche sur le Web.
 
 ### Initialiser la recherche
 
@@ -34,8 +34,8 @@ for wp in webpages[:5]:
 #### Resultats pour les images
 
 ```python
-webpages = web.images
-for wp in webpages[:5]:
+webimages = web.images
+for wp in webimages[:5]:
    print(wp)
 ```
 
