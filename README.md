@@ -41,6 +41,7 @@ for wp in webimages[:5]:
 
 <details>
  <summary> Resultats images </summary>
+
 ```
    https://tse3.mm.bing.net/th?id=OIP.-K25y8TqkOi9UG_40Ti8bgAAAA
    https://tse1.mm.bing.net/th?id=OIP.yJPVcDx6znFSOewLdQBbHgHaJA
@@ -63,6 +64,7 @@ for pdf in pdfs[:5]:
 
 <details>
  <summary> Resultats PDF </summary>
+ 
 ```
    https://www.coconino.edu/resources/files/pdfs/registration/curriculum/course-outlines/m/mat/mat_220.pdf
    https://www.jmu.edu/mathstat/Files/ALEKSmatrix.pdf
