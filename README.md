@@ -41,6 +41,7 @@ for wp in webimages[:5]:
 
 <details>
  <summary> Resultats images </summary>
+   
 ```
    https://tse3.mm.bing.net/th?id=OIP.-K25y8TqkOi9UG_40Ti8bgAAAA
    https://tse1.mm.bing.net/th?id=OIP.yJPVcDx6znFSOewLdQBbHgHaJA
@@ -48,5 +49,14 @@ for wp in webimages[:5]:
    https://tse2.mm.bing.net/th?id=OIP.IUIEkGQVzYRKaDA7WeeV7QHaEF
    https://tse3.explicit.bing.net/th?id=OIP.OmvVnMIVu2ZdNZHZzJK_hgAAAA
 ```
+   
 </details>
+
+
+
+## LICENSE
+
+MIT License
+
+Copyright (c) 2021 [iTeam-$](https://iteam-s.mg)
 
