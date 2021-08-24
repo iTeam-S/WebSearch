@@ -1,6 +1,6 @@
 import urllib.parse
 from bs4 import BeautifulSoup
-from .utils import get
+from .utils import get, head
 
 class WebSearch :
 
@@ -9,6 +9,17 @@ class WebSearch :
         # utiliser pour l'optimisation
         self.__data = {}
 
+    def __verif_content(self, urls, doc='pdf'):
+        '''
+            Verification du bon format du lien
+        '''
+        new_urls = []
+        for url in urls:
+            rq = head(url).headers
+            if rq.get('content-type') == f'application/{doc}':
+                new_urls.append(url)
+        return new_urls
+        
     @property
     def images(self):
         """ 
@@ -56,4 +67,19 @@ class WebSearch :
                 result.append(urllib.parse.unquote(tmp[0]))
         self.__data['pages'] = (self.query, result)
         return result
-
+    
+    @property
+    def pdf(self):
+        '''
+            Fonction pour recuperer que les pdf.
+        '''
+        if self.__data.get('pdf'):
+            if self.__data['pdf'][0] == self.query:
+                return self.__data['pdf'][1]
+        tmp = self.query
+        self.query = 'filetype:pdf ' + self.query
+        result = self.__verif_content(self.pages, 'pdf')
+        self.query = tmp
+        self.__data['pdf'] = (self.query, result)
+        return result
+        

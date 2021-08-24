@@ -1,4 +1,5 @@
 from requests import get as gets
+from requests import head
 
 def get (url, kwargs = {}):
     """
