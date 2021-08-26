@@ -1,6 +1,18 @@
 # WebSearch
 
-> Module python permettant de faire différente recherche sur le Web.
+> Module python permettant de faire différente recherche de liens sur le Web.
+
+**Utilisation rapide**
+
+```python
+from websearch import WebSearch as search
+for page in search('iTeam-$).pages[:2]:
+   print(result)
+# https://iteam-s.mg/
+# https://github.com/iTeam-S
+```
+
+__________________________
 
 ### Initialiser la recherche
 
