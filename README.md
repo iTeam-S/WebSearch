@@ -5,8 +5,8 @@
 **Utilisation rapide**
 
 ```python
-from websearch import WebSearch as search
-for page in search('iTeam-$).pages[:2]:
+from websearch import WebSearch as web
+for page in web('iTeam-$').pages[:2]:
    print(result)
 # https://iteam-s.mg/
 # https://github.com/iTeam-S
