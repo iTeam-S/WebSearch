@@ -7,12 +7,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Prepare repo
-        uses: actions/checkout@master
-      - name: Test
-        uses: onichandame/python-test-action@master
-      - name: Upload
-        uses: onichandame/pip-upload-action@master
-        with:
-          username: '__token__'
-          password: ${{ secrets.PIP_TOKEN }}
+    - name: Publish a Python distribution to PyPI
+      uses: ortega2247/pypi-upload-action@master
+      with:
+        user: __token__
+        password: ${{ secrets.PIP_TOKEN }}
