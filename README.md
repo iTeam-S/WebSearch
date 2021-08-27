@@ -3,12 +3,12 @@
 > Module python permettant de faire différente recherche de liens sur le Web.
 
 [![PyPI - Version](https://img.shields.io/pypi/v/websearch-python?style=for-the-badge)](https://pypi.org/project/websearch-python/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/websearch-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/websearch-python/)
+<!-- [![PyPI - Downloads](https://img.shields.io/pypi/dm/websearch-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/websearch-python/)-->
 
 
 ## Installation
 
-```bash
+```sh
 pip3 install websearch-python
 ```
 
