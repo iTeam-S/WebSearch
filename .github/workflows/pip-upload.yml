@@ -1,4 +1,4 @@
-name: Publish
+name: [CD] Publish
 on:
   release:
     types: # This configuration does not affect the page_build event above
