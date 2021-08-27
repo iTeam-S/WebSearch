@@ -1,7 +1,5 @@
 name: Publish
 on:
-  push:
-    branches: [ main ]
   release:
     types: # This configuration does not affect the page_build event above
       - created
