@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="websearch",                     # This is the name of the package
+    name="websearch-python",                     # This is the name of the package
     version="0.0.2",                        # The initial release version
     author="iTeam-$ @iTeam-S",                     # Full name of the author
     description="Module python permettant de faire différente recherche de liens sur le Web.",
