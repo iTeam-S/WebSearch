@@ -7,7 +7,7 @@ import websearch
 
 class TestCaseModule(unittest.TestCase):
 
-    def test_pages(self):
+    def test1_pages(self):
         pages = websearch.WebSearch('iTeam-$').pages[:5]
         # Verification de nombres de resultats
         self.assertTrue(len(pages))
@@ -15,7 +15,7 @@ class TestCaseModule(unittest.TestCase):
         for page in pages:
             self.assertTrue(page.startswith('http'))
     
-    def test_images(self):
+    def test2_images(self):
         images = websearch.WebSearch('Madagascar').images[:5]
         # Verification de nombres de resultats
         self.assertTrue(len(images))
@@ -23,7 +23,7 @@ class TestCaseModule(unittest.TestCase):
         for image in images:
             self.assertTrue(image.startswith('http'))
     
-    def test_images(self):
+    def test3_pdf(self):
         pdfs = websearch.WebSearch('Math 220').pdf[:2]
         # Verification de nombres de resultats
         self.assertTrue(len(pdfs))
