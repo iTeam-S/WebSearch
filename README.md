@@ -3,7 +3,7 @@
 > Module python permettant de faire différente recherche de liens sur le Web.
 
 
-[![Python application](https://github.com/iTeam-S/WebSearch/actions/workflows/python-app.yml/badge.svg)](https://github.com/iTeam-S/WebSearch/actions/workflows/python-app.yml)
+[![Python application](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml/badge.svg)](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml)
 [![Publish](https://github.com/iTeam-S/WebSearch/actions/workflows/pip-upload.yml/badge.svg)](https://github.com/iTeam-S/WebSearch/actions/workflows/pip-upload.yml)
 
 [![PyPI - Version](https://img.shields.io/pypi/v/websearch-python?style=for-the-badge)](https://pypi.org/project/websearch-python/)
