@@ -1,6 +1,6 @@
 # WebSearch
 
-> Module python permettant de faire différente recherche de liens sur le Web.
+> Python module allowing you to do various searches for links on the Web.
 
 
 [![Python application](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml/badge.svg)](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml)
@@ -17,9 +17,9 @@
 pip3 install websearch-python
 ```
 
-## Utilisation
+## Use
 
-### Utilisation rapide
+### Quick Start
 
 ```python
 from websearch import WebSearch as web
@@ -28,21 +28,21 @@ for page in web('iTeam-$').pages[:2]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
  https://iteam-s.mg/
  https://github.com/iTeam-S
 ```
 __________________________
 
-### Initialiser la recherche
+### Initialization
 
 ```python
 from websearch import WebSearch
 web = WebSearch('Gaetan Jonathan BAKARY')
 ```
 
-### Resultats pour les pages web
+### Webpages results
 
 ```python
 webpages = web.pages
@@ -51,7 +51,7 @@ for wp in webpages[:5]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
    https://mg.linkedin.com/in/gaetanj
    https://portfolio.iteam-s.mg/?u=gaetan
@@ -61,7 +61,7 @@ for wp in webpages[:5]:
 ```
 
 
-### Resultats pour les images
+### Images results
 
 ```python
 webimages = web.images
@@ -70,7 +70,7 @@ for wp in webimages[:5]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
    https://tse3.mm.bing.net/th?id=OIP.-K25y8TqkOi9UG_40Ti8bgAAAA
    https://tse1.mm.bing.net/th?id=OIP.yJPVcDx6znFSOewLdQBbHgHaJA
@@ -80,7 +80,7 @@ for wp in webimages[:5]:
 ```
 
 
-### Resultats pour les PDF
+### PDF results
 
 ```python
 from websearch import WebSearch
@@ -91,7 +91,7 @@ for pdf in pdfs[:5]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
    https://www.coconino.edu/resources/files/pdfs/registration/curriculum/course-outlines/m/mat/mat_220.pdf
    https://www.jmu.edu/mathstat/Files/ALEKSmatrix.pdf
