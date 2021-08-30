@@ -1,3 +1,4 @@
 from .script import WebSearch
-__version__ = '0.0.2'
-__author__ = 'iTeam-$ @iTeam-S'
+__version__ = '0.1'
+__author__ = 'iTeam-$'
+__license__ = 'MIT License iTeam-$ 2021'
