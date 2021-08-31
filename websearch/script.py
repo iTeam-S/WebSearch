@@ -13,7 +13,7 @@ class WebSearch :
         # utiliser pour l'optimisation
         self.__data = {}
 
-    def __verif_content(self, urls, doc='pdf'):
+    def __verif_content(self, urls, doc):
         '''
             Verification du bon format du lien
         '''
@@ -82,7 +82,7 @@ class WebSearch :
             -> https://accounts.google.com/ServiceLogin?continue=...
         '''
         return result[:-2]
-    
+
     @property
     def pdf(self):
         '''
@@ -99,3 +99,60 @@ class WebSearch :
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['pdf'] = (self.query, result)
         return result
+
+    @property
+    def docx(self):
+        """
+        Fonction pour récupérer les documents word.
+      """
+      #vérifier si les résultats ne sont pas déjà enregistrer
+        if self.__data.get('docx'):
+            if self.__data['docx'][0] == self.query:
+                return self.__data['docx'][1]
+        tmp = self.query
+        self.query = 'filetype:docx ' + self.query
+        result = self.__verif_content(self.pages, "vnd.openxmlformats-officedocument.wordprocessingml.document")
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data['docx'] = (self.query, result)
+        return result
+
+    @property 
+    def xlsx(self):
+        """Fonction pour récupérer les excels
+        """
+        #vérifier si les résultat ne sont pas déjà enregistrer
+        if self.__data.get('xlsx'):
+            if self.__data['xlsx'][0] == self.query:
+                return self.__data['xlsx'][1]
+        tmp = self.query
+        self.query = 'filetype:xlsx ' + self.query
+        result = self.__verif_content(self.pages, "vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data['xlsx'] = (self.query, result)
+        return result
+
+    
+    @property 
+    def pptx(self):
+        """Fonction pour récupérer les excels
+        """
+        #vérifier si les résultat ne sont pas déjà enregistrer
+        if self.__data.get('pptx'):
+            if self.__data['pptx'][0] == self.query:
+                return self.__data['pptx'][1]
+        tmp = self.query
+        self.query = 'filetype:pptx ' + self.query
+        result = self.__verif_content(self.pages, "vnd.openxmlformats-officedocument.presentationml.presentation")
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data['pptx'] = (self.query, result)
+        return result
+
+
+
+    
+
+    
+
