@@ -31,6 +31,30 @@ class TestCaseModule(unittest.TestCase):
         for pdf in pdfs:
             self.assertTrue(pdf.startswith('http'))
 
+    def test4_word(self):
+        words = websearch.WebSearch('guitare').docx[:3]
+        #Verification de nombres de resultats
+        self.assertTrue(len(words))
+        #verification lien
+        for word in words:
+            self.assertTrue(word.startswith('http'))
+        
+    def test5_excel(self):
+        excels = websearch.WebSearch('verbe').xlsx[:3]
+        #Verification de nombre de résultats
+        self.assertTrue(len(excels))
+        #verification lien
+        for excel in excels:
+            self.assertTrue(excel.startswith('http'))
+
+    def test6_powerpoint(self):
+        powerpoints = websearch.WebSearch('Communication').pptx[:3]
+        #Verification de nombre de résultats
+        self.assertTrue(len(powerpoints))
+        #verification lien
+        for powerpoint in powerpoints:
+            self.assertTrue(powerpoint.startswith('http'))
+
 if __name__ == '__main__':
     runner = unittest.TestCase()
     runner.run()
