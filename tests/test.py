@@ -47,13 +47,8 @@ class TestCaseModule(unittest.TestCase):
         for excel in excels:
             self.assertTrue(excel.startswith('http'))
 
-<<<<<<< HEAD
     def test5_powerpoint(self):
         powerpoints = websearch.WebSearch('Leadership').pptx[:3]  
-=======
-    def test6_powerpoint(self):
-        powerpoints = websearch.WebSearch('Communication').pptx[:3]
->>>>>>> refs/remotes/origin/angela
         #Verification de nombre de résultats
         self.assertTrue(len(powerpoints))
         #verification lien
