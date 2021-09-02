@@ -20,7 +20,11 @@ class WebSearch :
         new_urls = []
         for url in urls:
             # Envoie d'une requete qui recupere que l'en tête.
-            rq = head(url).headers
+            try:
+                rq = head(url).headers
+            except Exception as err:
+                print(err)
+                continue
             # Verfier si le lien renvoie bien le format voulu.
             if rq.get('content-type') == f'application/{doc}':
                 new_urls.append(url)
