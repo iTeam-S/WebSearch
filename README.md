@@ -133,7 +133,7 @@ for excel in excels[:3]:
 
    https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/979255/Detailed_Single_Data_List_-_2021-2022.xlsx
    https://www.jaist.ac.jp/top/data/list-achievement-research-e.xlsx
-   https://img1.wsimg.com/blobby/go/bed8f8d7-d6c2-488d-9aa3-5910e18aa8d2/downloads/Datalist.xlsx?ver=1620896521638
+   https://img1.wsimg.com/blobby/go/bed8f8d7-d6c2-488d-9aa3-5910e18aa8d2/downloads/Datalist.xlsx
 ```
 
 
