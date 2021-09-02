@@ -1,6 +1,6 @@
 # WebSearch
 
-> Module python permettant de faire différente recherche de liens sur le Web.
+> Python module allowing you to do various searches for links on the Web.
 
 
 [![Python application](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml/badge.svg)](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml)
@@ -17,9 +17,9 @@
 pip3 install websearch-python
 ```
 
-## Utilisation
+## Use
 
-### Utilisation rapide
+### Quick Start
 
 ```python
 from websearch import WebSearch as web
@@ -28,21 +28,21 @@ for page in web('iTeam-$').pages[:2]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
  https://iteam-s.mg/
  https://github.com/iTeam-S
 ```
 __________________________
 
-### Initialiser la recherche
+### Initialization
 
 ```python
 from websearch import WebSearch
 web = WebSearch('Gaetan Jonathan BAKARY')
 ```
 
-### Resultats pour les pages web
+### Webpages results
 
 ```python
 webpages = web.pages
@@ -51,7 +51,7 @@ for wp in webpages[:5]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
    https://mg.linkedin.com/in/gaetanj
    https://portfolio.iteam-s.mg/?u=gaetan
@@ -61,7 +61,7 @@ for wp in webpages[:5]:
 ```
 
 
-### Resultats pour les images
+### Images results
 
 ```python
 webimages = web.images
@@ -70,7 +70,7 @@ for wp in webimages[:5]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
    https://tse3.mm.bing.net/th?id=OIP.-K25y8TqkOi9UG_40Ti8bgAAAA
    https://tse1.mm.bing.net/th?id=OIP.yJPVcDx6znFSOewLdQBbHgHaJA
@@ -80,7 +80,7 @@ for wp in webimages[:5]:
 ```
 
 
-### Resultats pour les PDF
+### PDF results
 
 ```python
 from websearch import WebSearch
@@ -91,7 +91,7 @@ for pdf in pdfs[:5]:
 ```
 
 ```
-[RESULTATS]
+[RESULTS]
 
    https://www.coconino.edu/resources/files/pdfs/registration/curriculum/course-outlines/m/mat/mat_220.pdf
    https://www.jmu.edu/mathstat/Files/ALEKSmatrix.pdf
@@ -101,9 +101,69 @@ for pdf in pdfs[:5]:
 ```
 
 
+### DOCXS results
+```python
+from websearch import WebSearch:
+web = WebSearch('python')
+words = web.docx
+for word in words[:3]:
+   print(word)
+```
+
+```
+[RESULTS]
+
+   https://www.ocr.org.uk/Images/572953-j277-programming-techniques-python.docx
+   https://www.niu.edu/brown/_pdf/physics374_spring2021/l1-19-21.docx
+   https://ent2d.ac-bordeaux.fr/disciplines/mathematiques/wp-content/uploads/sites/3/2017/09/de-Scratch-%C3%A0-Python.docx
+```
+
+
+### XLSX results
+```python
+from websearch import WebSearch:
+web = WebSearch('datalist')
+excels = web.xlsx
+for excel in excels[:3]:
+   print(excel)
+```
+
+```
+[RESULTS]
+
+   https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/979255/Detailed_Single_Data_List_-_2021-2022.xlsx
+   https://www.jaist.ac.jp/top/data/list-achievement-research-e.xlsx
+   https://img1.wsimg.com/blobby/go/bed8f8d7-d6c2-488d-9aa3-5910e18aa8d2/downloads/Datalist.xlsx?ver=1620896521638
+```
+
+
+### PPTX results
+```python
+from websearch import WebSearch:
+web = WebSearch('Leadership')
+powerpoints = web.pptx
+for powerpoint in powerpoints[:3]:
+   print(powerpoint)
+```
+
+```
+[RESULTS]
+
+   https://www.plainviewisd.org/cms/lib6/TX01918200/Centricity/Domain/853/Leadership%20Behav.%20Styles.pptx
+   https://www.yorksandhumberdeanery.nhs.uk/sites/default/files/leadership_activity_and_msf.pptx
+   https://www.itfglobal.org/sites/default/files/node/resources/files/Stage%203.1%20Powerpoint.pptx
+```
+
+
 ## LICENSE
 
 MIT License
 
 Copyright (c) 2021 [iTeam-$](https://iteam-s.mg)
+
+
+___________________________________________________________________
+   
+ ## Contributors
+![contributors GitHub](https://contrib.rocks/image?repo=iTeam-S/WebSearch)
 
