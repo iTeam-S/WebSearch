@@ -101,7 +101,7 @@ for pdf in pdfs[:5]:
 ```
 
 
-### DOCXS results
+### DOCX results
 ```python
 from websearch import WebSearch:
 web = WebSearch('python')
