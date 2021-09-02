@@ -101,6 +101,60 @@ for pdf in pdfs[:5]:
 ```
 
 
+### DOCX results
+```python
+from websearch import WebSearch:
+web = WebSearch('python')
+words = web.docx
+for word in words[:3]:
+   print(word)
+```
+
+```
+[RESULTS]
+
+   https://www.ocr.org.uk/Images/572953-j277-programming-techniques-python.docx
+   https://www.niu.edu/brown/_pdf/physics374_spring2021/l1-19-21.docx
+   https://ent2d.ac-bordeaux.fr/disciplines/mathematiques/wp-content/uploads/sites/3/2017/09/de-Scratch-%C3%A0-Python.docx
+```
+
+
+### XLSX results
+```python
+from websearch import WebSearch:
+web = WebSearch('datalist')
+excels = web.xlsx
+for excel in excels[:3]:
+   print(excel)
+```
+
+```
+[RESULTS]
+
+   https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/979255/Detailed_Single_Data_List_-_2021-2022.xlsx
+   https://www.jaist.ac.jp/top/data/list-achievement-research-e.xlsx
+   https://img1.wsimg.com/blobby/go/bed8f8d7-d6c2-488d-9aa3-5910e18aa8d2/downloads/Datalist.xlsx
+```
+
+
+### PPTX results
+```python
+from websearch import WebSearch:
+web = WebSearch('Leadership')
+powerpoints = web.pptx
+for powerpoint in powerpoints[:3]:
+   print(powerpoint)
+```
+
+```
+[RESULTS]
+
+   https://www.plainviewisd.org/cms/lib6/TX01918200/Centricity/Domain/853/Leadership%20Behav.%20Styles.pptx
+   https://www.yorksandhumberdeanery.nhs.uk/sites/default/files/leadership_activity_and_msf.pptx
+   https://www.itfglobal.org/sites/default/files/node/resources/files/Stage%203.1%20Powerpoint.pptx
+```
+
+
 ## LICENSE
 
 MIT License

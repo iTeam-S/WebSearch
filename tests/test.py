@@ -32,7 +32,7 @@ class TestCaseModule(unittest.TestCase):
             self.assertTrue(pdf.startswith('http'))
 
     def test4_word(self):
-        words = websearch.WebSearch('guitare').docx[:3]
+        words = websearch.WebSearch('python').docx[:3]
         #Verification de nombres de resultats
         self.assertTrue(len(words))
         #verification lien
@@ -40,7 +40,7 @@ class TestCaseModule(unittest.TestCase):
             self.assertTrue(word.startswith('http'))
         
     def test5_excel(self):
-        excels = websearch.WebSearch('verbe').xlsx[:3]
+        excels = websearch.WebSearch('datalist').xlsx[:3]
         #Verification de nombre de résultats
         self.assertTrue(len(excels))
         #verification lien
