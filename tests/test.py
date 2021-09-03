@@ -55,6 +55,7 @@ class TestCaseModule(unittest.TestCase):
         for powerpoint in powerpoints:
             self.assertTrue(powerpoint.startswith('http'))
 
+
 if __name__ == '__main__':
     runner = unittest.TestCase()
     runner.run()
