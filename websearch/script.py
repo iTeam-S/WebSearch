@@ -8,15 +8,27 @@ class WebSearch :
     '''
     _headers =  {'User-Agent': 'Googlebot/2.1 (http://www.googlebot.com/bot.html)'}
 
-    def __init__(self, query) :
+    def __init__(self, query, verif=True):
+        '''
+            query: prend l'expression à rechercher.
+            verif: si True, lance une requete à l'url pour valider
+                le bon format du résultat, pardefaut à True.
+            peut être desactiver en mettant `verif=False` en argument.
+        '''
         self.query = query
+        self.verif = verif
         # utiliser pour l'optimisation
         self.__data = {}
 
-    def __verif_content(self, urls, doc):
+    def __verif_content(self, urls, ext):
         '''
             Verification du bon format du lien
         '''
+        if not self.verif:
+            # si Faux pas de verification
+            # reenvoie directement la liste données
+            return urls
+        
         new_urls = []
         for url in urls:
             # Envoie d'une requete qui recupere que l'en tête.
@@ -26,7 +38,7 @@ class WebSearch :
                 print(err)
                 continue
             # Verfier si le lien renvoie bien le format voulu.
-            if rq.get('content-type') == f'application/{doc}':
+            if rq.get('content-type') == f'application/{ext}':
                 new_urls.append(url)
         # renvoyer les urls verfiés.
         return new_urls
@@ -153,9 +165,4 @@ class WebSearch :
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['pptx'] = (self.query, result)
         return result
-
-
-
-
-    
 

@@ -17,7 +17,7 @@
 pip3 install websearch-python
 ```
 
-## Use
+## Usage
 
 ### Quick Start
 
@@ -98,6 +98,15 @@ for pdf in pdfs[:5]:
    https://www.jjc.edu/sites/default/files/Academics/Math/M220%20Master%20Syllabus%20SP18.pdf
    https://www.sonoma.edu/sites/www/files/2018-19cat-11math.pdf
    https://www.svsd.net/cms/lib5/PA01001234/Centricity/Domain/1009/3.3-3.3B-Practice-KEY.pdf
+```
+
+To prevent the search for attachments with format verification, set `verif=False`, which is `True` by default.
+
+Format verification is presented here: https://github.com/iTeam-S/WebSearch/pull/4 
+
+```python
+from websearch import WebSearch
+web = WebSearch('Math 220', verif=False)
 ```
 
 
