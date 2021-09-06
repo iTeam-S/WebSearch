@@ -102,7 +102,7 @@ for pdf in pdfs[:5]:
 
 To prevent the search for attachments with format verification, set `verif=False`, which is `True` by default.
 
-Format verification is presented here: https://github.com/iTeam-S/WebSearch/pull/4 
+Format verification is presented [here](https://github.com/iTeam-S/WebSearch/pull/4)
 
 ```python
 from websearch import WebSearch
