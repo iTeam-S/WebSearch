@@ -15,7 +15,14 @@ class WebSearch :
                 le bon format du résultat, pardefaut à True.
             peut être desactiver en mettant `verif=False` en argument.
         '''
-        self.query = query
+        # verifier si la recherche est de type mutliple.
+        if isinstance(query, list):
+            self.query = "'"
+            self.query += "' OR '".join(query)
+            self.query += "'"
+        else:
+            self.query = query
+        # Utiliser pour la verification des liens.
         self.verif = verif
         # utiliser pour l'optimisation
         self.__data = {}

@@ -41,6 +41,11 @@ __________________________
 from websearch import WebSearch
 web = WebSearch('Gaetan Jonathan BAKARY')
 ```
+you can pass a `list` for mutliple keyword.
+
+```python
+web = WebSearch(['Gaetan Jonathan BAKARY', 'iTeam-S'])
+```
 
 ### Webpages results
 
