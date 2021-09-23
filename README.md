@@ -46,6 +46,12 @@ you can pass a `list` for mutliple keyword.
 ```python
 web = WebSearch(['Gaetan Jonathan BAKARY', 'iTeam-S'])
 ```
+You can also specify a `website` as a reference.
+
+```python
+web = WebSearch('Gaetan Jonathan', site='iteam-s.mg')
+```
+
 
 ### Webpages results
 
