@@ -4,17 +4,17 @@ from requests import get, head
 
 class WebSearch :
     '''
-        Classe permettant de prendre les différents lien sur le web.
+        Module permettant de prendre les différents lien sur le web.
+            * query: prend l'expression à rechercher.
+            * verif: si True, lance une requete à l'url pour valider
+                le bon format du résultat, pardefaut à True.
+                peut être desactiver en mettant `verif=False` en argument.
+            * site: pour preciser un site precis comme source
+                
     '''
     _headers =  {'User-Agent': 'Googlebot/2.1 (http://www.googlebot.com/bot.html)'}
 
-    def __init__(self, query, verif=True):
-        '''
-            query: prend l'expression à rechercher.
-            verif: si True, lance une requete à l'url pour valider
-                le bon format du résultat, pardefaut à True.
-            peut être desactiver en mettant `verif=False` en argument.
-        '''
+    def __init__(self, query, verif=True, **kwargs):
         # verifier si la recherche est de type mutliple.
         if isinstance(query, list):
             self.query = "'"
@@ -22,6 +22,11 @@ class WebSearch :
             self.query += "'"
         else:
             self.query = query
+
+        # verification du presence du site
+        if kwargs.get('site'):
+            self.query = f"site:{kwargs.get('site')} {self.query}"
+
         # Utiliser pour la verification des liens.
         self.verif = verif
         # utiliser pour l'optimisation
@@ -172,4 +177,3 @@ class WebSearch :
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['pptx'] = (self.query, result)
         return result
-
