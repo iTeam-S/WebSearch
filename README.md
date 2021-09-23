@@ -17,7 +17,7 @@
 pip3 install websearch-python
 ```
 
-## Usage
+## Use
 
 ### Quick Start
 
@@ -41,7 +41,7 @@ __________________________
 from websearch import WebSearch
 web = WebSearch('Gaetan Jonathan BAKARY')
 ```
-you can pass a `list` for mutliple keyword.
+You can pass a `list` for mutliple keyword.
 
 ```python
 web = WebSearch(['Gaetan Jonathan BAKARY', 'iTeam-S'])
@@ -56,6 +56,8 @@ web = WebSearch('Gaetan Jonathan', site='iteam-s.mg')
 ### Webpages results
 
 ```python
+from websearch import WebSearch
+web = WebSearch('Gaetan Jonathan BAKARY')
 webpages = web.pages
 for wp in webpages[:5]:
    print(wp)
@@ -75,6 +77,8 @@ for wp in webpages[:5]:
 ### Images results
 
 ```python
+from websearch import WebSearch
+web = WebSearch('Gaetan Jonathan BAKARY')
 webimages = web.images
 for wp in webimages[:5]:
    print(wp)
