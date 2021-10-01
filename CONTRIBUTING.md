@@ -8,3 +8,6 @@ The steps are therefore:
 - Write the unit test following the model already present
 - Update the README by specifying the new functionality
 - Create your REQUEST PULL
+
+
+Notes: This link `https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types` can help for adding a new extension
