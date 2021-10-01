@@ -177,3 +177,20 @@ class WebSearch :
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['pptx'] = (self.query, result)
         return result
+
+    @property
+    def odt(self):
+        '''
+            Fonction pour recuperer que les documents odt.
+        '''
+         #  On vérifie que les résultats ne sont pas déjà enregistrés.
+        if self.__data.get('odt'):
+            if self.__data['odt'][0] == self.query:
+                return self.__data['odt'][1]
+        tmp = self.query
+        self.query = 'filetype:odt ' + self.query
+        result = self.__verif_content(self.pages, "vnd.oasis.opendocument.text")
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data['odt'] = (self.query, result)
+        return result

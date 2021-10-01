@@ -179,6 +179,22 @@ for powerpoint in powerpoints[:3]:
 ```
 
 
+### ODT results
+```python
+from websearch import WebSearch:
+web = WebSearch('Finance')
+documents = web.odt
+for doc in documents[:3]:
+   print(doc)
+```
+
+```
+[RESULTS]
+
+   https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/970748/Green_Finance_Report.odt
+   https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/974275/Memorandum_of_Understanding_with_BNDES_for_Brazil_s_Green_Finance_Programme.odt
+   https://iati.fcdo.gov.uk/iati_documents/3678707.odt   
+```
 ## LICENSE
 
 MIT License
