@@ -50,11 +50,11 @@ def download_youtube(url ,kwargs):
             info_dict = ydl.extract_info(url, download=False)
             ydl.prepare_filename(info_dict)
             ydl.download([url])
-            return ydl_opts['outtmpl']
+            return ydl.prepare_filename(info_dict)
     except Exception as e:
         print(e)
         return False 
 params = {
     'audio' : True ,
 }
-print(download_youtube('https://www.youtube.com/watch?v=BZP1rYjoBgI', params))
+x= download_youtube('https://www.youtube.com/watch?v=BZP1rYjoBgI', params)
