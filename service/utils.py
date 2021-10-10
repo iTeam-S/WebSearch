@@ -3,7 +3,6 @@ from youtube_dl import YoutubeDL
 def download_youtube(url ,kwargs):
     '''
     Une fonction pour télecharger les vidéos sur Youtube
-
         Si vous voulez seulement l'audio :
             parms :{
                 'audio' : True
@@ -21,7 +20,7 @@ def download_youtube(url ,kwargs):
     ytl_opts = {}
     if kwargs.get('audio') :
         ydl_opts = {
-            'outtmpl': '%(title)s-%(id)s.%(ext)s', 
+            'outtmpl': '../data/audio/%(title)s-%(id)s.%(ext)s', 
             'noplaylist': True,
             'continue_dl': True,
             'format': 'bestaudio/best', 
@@ -33,14 +32,14 @@ def download_youtube(url ,kwargs):
         } 
     elif kwargs.get('video') and kwargs.get('format'):
         ydl_opts = {
-            'outtmpl': '%(title)s-%(id)s.%(ext)s',
+            'outtmpl': '../data/video/%(title)s-%(id)s.%(ext)s',
             'noplaylist': True,
             'continue_dl': True,
             'format' : format ,
         } 
     else :
         ydl_opts = {
-            'outtmpl': '%(title)s-%(id)s.%(ext)s',
+            'outtmpl': '../data/video/%(title)s-%(id)s.%(ext)s',
             'noplaylist': True,
             'continue_dl': True,
             'format' : 'bestvideo+bestaudio/best' ,
@@ -51,11 +50,11 @@ def download_youtube(url ,kwargs):
             info_dict = ydl.extract_info(url, download=False)
             ydl.prepare_filename(info_dict)
             ydl.download([url])
-            return True
+            return ydl_opts['outtmpl']
     except Exception as e:
         print(e)
         return False 
 params = {
     'audio' : True ,
 }
-download_youtube('https://www.youtube.com/watch?v=BZP1rYjoBgI', params)
+print(download_youtube('https://www.youtube.com/watch?v=BZP1rYjoBgI', params))
