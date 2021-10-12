@@ -63,6 +63,13 @@ class TestCaseModule(unittest.TestCase):
         for doc in documents:
             self.assertTrue(doc.startswith('http'))
 
+    def test8_ods(self):
+        documents = websearch.WebSearch('Commerce').ods[:1]
+        #Verification de nombre de résultats
+        self.assertTrue(len(documents))
+        #verification lien
+        for doc in documents:
+            self.assertTrue(doc.startswith('http'))
 
 if __name__ == '__main__':
     runner = unittest.TestCase()

@@ -194,6 +194,22 @@ for doc in documents[:2]:
    https://iati.fcdo.gov.uk/iati_documents/3678707.odt
   
 ```
+
+### ODS results
+```python
+from websearch import WebSearch
+web = WebSearch('Commerce')
+documents = web.ods
+for doc in documents[:2]:
+   print(doc)
+```
+
+```
+[RESULTS]
+http://www.justice.gouv.fr/art_pix/Stat_RSJ_12.7_Civil_Les_tribunaux_de_commerce.ods
+https://www.insee.fr/fr/metadonnees/source/fichier/Precision-principaux-indicateurs-crise-sanitaire-2020.ods
+```
+
 ## LICENSE
 
 MIT License
