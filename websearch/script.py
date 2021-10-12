@@ -194,3 +194,21 @@ class WebSearch :
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['odt'] = (self.query, result)
         return result
+    
+    @property
+    def ods(self):
+        '''
+            Fonction pour recuperer que les documents ods.
+        '''
+         #  On vérifie que les résultats ne sont pas déjà enregistrés.
+        if self.__data.get('ods'):
+            if self.__data['ods'][0] == self.query:
+                return self.__data['ods'][1]
+        tmp = self.query
+        self.query = 'filetype:ods ' + self.query
+        result = self.__verif_content(self.pages, "vnd.oasis.opendocument.spreadsheet")
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data['ods'] = (self.query, result)
+        return result
+
