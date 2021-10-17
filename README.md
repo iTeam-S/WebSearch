@@ -24,7 +24,7 @@ pip3 install websearch-python
 ```python
 from websearch import WebSearch as web
 for page in web('iTeam-$').pages[:2]:
-   print(result)
+   print(page)
 ```
 
 ```
@@ -80,8 +80,8 @@ for wp in webpages[:5]:
 from websearch import WebSearch
 web = WebSearch('Gaetan Jonathan BAKARY')
 webimages = web.images
-for wp in webimages[:5]:
-   print(wp)
+for im in webimages[:5]:
+   print(im)
 ```
 
 ```
