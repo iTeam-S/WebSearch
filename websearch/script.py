@@ -212,3 +212,21 @@ class WebSearch :
         self.__data['ods'] = (self.query, result)
         return result
 
+    @property
+    def kml(self):
+        '''
+            Fonction pour recuperer des fichiers de projets géographiques
+            pour google earth sous la format kml
+        '''
+         #  On vérifie que les résultats ne sont pas déjà enregistrés.
+        if self.__data.get('kml'):
+            if self.__data['kml'][0] == self.query:
+                return self.__data['kml'][1]
+        tmp = self.query
+        self.query = 'filetype:kml ' + self.query
+        result = self.__verif_content(self.pages, "vnd.google-earth.kml+xml")
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data['kml'] = (self.query, result)
+        return result
+

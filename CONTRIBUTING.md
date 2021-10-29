@@ -10,4 +10,6 @@ The steps are therefore:
 - Create your REQUEST PULL
 
 
-Notes: This link `https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types` can help for adding a new extension
+Notes: Thos links can help for adding a new extension
+- `https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types`
+- `https://support.google.com/webmasters/answer/35287`
