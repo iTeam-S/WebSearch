@@ -35,6 +35,8 @@ class WebSearch :
     def __verif_content(self, urls, ext):
         '''
             Verification du bon format du lien
+            argument `ext` peut être consulté ici:
+            https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
         '''
         if not self.verif:
             # si Faux pas de verification
