@@ -82,7 +82,7 @@ class TestCaseModule(unittest.TestCase):
     def test10_custom(self):
         documents = websearch.WebSearch('Biologie').custom_search('ps', 'application/postscript')[:1]
         #Verification de nombre de résultats
-        self.assertTrue(len())
+        self.assertTrue(len(documents))
         #verification lien
         for doc in documents:
             self.assertTrue(map.startswith('http'))
