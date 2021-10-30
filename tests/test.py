@@ -71,6 +71,22 @@ class TestCaseModule(unittest.TestCase):
         for doc in documents:
             self.assertTrue(doc.startswith('http'))
 
+    def test9_kml(self):
+        maps = websearch.WebSearch('Madagascar').kml[:1]
+        #Verification de nombre de résultats
+        self.assertTrue(len(maps))
+        #verification lien
+        for map in maps:
+            self.assertTrue(map.startswith('http'))
+
+    def test10_custom(self):
+        documents = websearch.WebSearch('Biologie').custom_search('ps', 'application/postscript')[:1]
+        #Verification de nombre de résultats
+        self.assertTrue(len(documents))
+        #verification lien
+        for doc in documents:
+            self.assertTrue(doc.startswith('http'))
+
 if __name__ == '__main__':
     runner = unittest.TestCase()
     runner.run()
