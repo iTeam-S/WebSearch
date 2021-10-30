@@ -227,6 +227,11 @@ https://ngoaidmap.org/downloads?doc=kml&name=nemp-madagascar-cyclone-enawo-respo
 ```
 
 ### CUSTOM search
+
+For other extensions, not present, use the `custom` function
+
+Second arg is explained [here](https://github.com/WebSearh/pull/4)
+
 ```python
 from websearch import WebSearch
 web = WebSearch('Biologie')
