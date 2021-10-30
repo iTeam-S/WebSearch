@@ -218,6 +218,24 @@ class WebSearch :
         return result
 
     @property
+    def odp(self):
+        '''
+            Fonction pour recuperer que les documents odp.
+        '''
+         #  On vérifie que les résultats ne sont pas déjà enregistrés.
+        if self.__data.get('odp'):
+            if self.__data['odp'][0] == self.query:
+                return self.__data['odp'][1]
+        tmp = self.query
+        self.query = 'filetype:odp ' + self.query
+        result = self.__verif_content(self.pages, "application/vnd.oasis.opendocument.presentation")
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data['odp'] = (self.query, result)
+        return result
+
+
+    @property
     def kml(self):
         '''
             Fonction pour recuperer des fichiers de projets géographiques
@@ -255,4 +273,3 @@ class WebSearch :
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data[extension] = (self.query, result)
         return result
-
