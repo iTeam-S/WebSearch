@@ -52,7 +52,7 @@ class WebSearch :
                 print(err)
                 continue
             # Verfier si le lien renvoie bien le format voulu.
-            if rq.get('content-type') == f'{mimetype}':
+            if rq.get('content-type') == mimetype:
                 new_urls.append(url)
         # renvoyer les urls verfiés.
         return new_urls
@@ -79,9 +79,12 @@ class WebSearch :
         if len(lis)==0 : 
             return result
         for li in lis:
-            img = li.find("img")
-            img = str(img["data-src"]).split("&pid")
-            result.append(str(img[0]))  
+            try:
+                img = li.find("img")
+                img = str(img["data-src"]).split("&pid")
+                result.append(str(img[0]))
+            except:
+                continue
         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['images'] = (self.query, result)
         return result 

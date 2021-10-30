@@ -85,7 +85,7 @@ class TestCaseModule(unittest.TestCase):
         self.assertTrue(len(documents))
         #verification lien
         for doc in documents:
-            self.assertTrue(map.startswith('http'))
+            self.assertTrue(doc.startswith('http'))
 
 if __name__ == '__main__':
     runner = unittest.TestCase()
