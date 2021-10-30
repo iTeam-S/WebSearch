@@ -230,7 +230,7 @@ https://ngoaidmap.org/downloads?doc=kml&name=nemp-madagascar-cyclone-enawo-respo
 
 For other extensions, not present, use the `custom` function
 
-Second arg is explained [here](https://github.com/WebSearh/pull/4)
+Second arg is explained [here](https://github.com/WebSearch/pull/4)
 
 ```python
 from websearch import WebSearch
