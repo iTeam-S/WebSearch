@@ -232,7 +232,7 @@ class WebSearch :
         self.__data['kml'] = (self.query, result)
         return result
 
-    def custom_search(self, extension='pdf', mimetype='pdf'):
+    def custom_search(self, extension='pdf', mimetype='application/pdf'):
         '''
             Fonction pour recuperer des fichiers en fonction
             de l'extension voulu et des type de mime que ce dernier utilise
