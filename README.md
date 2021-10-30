@@ -210,6 +210,38 @@ http://www.justice.gouv.fr/art_pix/Stat_RSJ_12.7_Civil_Les_tribunaux_de_commerce
 https://www.insee.fr/fr/metadonnees/source/fichier/Precision-principaux-indicateurs-crise-sanitaire-2020.ods
 ```
 
+### KML results
+```python
+from websearch import WebSearch
+web = WebSearch('Madagascar')
+maps = web.kml
+for map in maps[:3]:
+   print(map)
+```
+
+```
+[RESULTS]
+http://www.hydrosciences.fr/sierem/kmz_files/MGPLGRA.kml
+https://www.ngoaidmap.org/downloads?doc=kml&name=association-intercooperation-madagascar-aim_projects&partners%5B%5D=6160&sectors%5B%5D=1&status=active
+https://ngoaidmap.org/downloads?doc=kml&name=nemp-madagascar-cyclone-enawo-response_projects&projects%5B%5D=20655&status=active
+```
+
+### CUSTOM search
+```python
+from websearch import WebSearch
+web = WebSearch('Biologie')
+ps_documents = web.custom_search('ps', 'application/postscript')
+for doc in ps_documents[:3]:
+   print(doc)
+```
+
+```
+[RESULTS]
+http://irma.math.unistra.fr/~fbertran/Master1_2020_2/L3Court.ps
+http://jfla.inria.fr/2002/actes/10-michel.ps
+https://www.crstra.dz/telechargement/pnr/ps/environnement/fadel-djamel.ps
+```
+
 ## LICENSE
 
 MIT License

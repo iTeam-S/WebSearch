@@ -32,7 +32,7 @@ class WebSearch :
         # utiliser pour l'optimisation
         self.__data = {}
 
-    def __verif_content(self, urls, ext):
+    def __verif_content(self, urls, mimetype):
         '''
             Verification du bon format du lien
         '''
@@ -50,7 +50,7 @@ class WebSearch :
                 print(err)
                 continue
             # Verfier si le lien renvoie bien le format voulu.
-            if rq.get('content-type') == f'application/{ext}':
+            if rq.get('content-type') == f'{mimetype}':
                 new_urls.append(url)
         # renvoyer les urls verfiés.
         return new_urls
@@ -122,7 +122,7 @@ class WebSearch :
                 return self.__data['pdf'][1]
         tmp = self.query
         self.query = 'filetype:pdf ' + self.query
-        result = self.__verif_content(self.pages, 'pdf')
+        result = self.__verif_content(self.pages, 'application/pdf')
         self.query = tmp
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['pdf'] = (self.query, result)
@@ -139,7 +139,7 @@ class WebSearch :
                 return self.__data['docx'][1]
         tmp = self.query
         self.query = 'filetype:docx ' + self.query
-        result = self.__verif_content(self.pages, "vnd.openxmlformats-officedocument.wordprocessingml.document")
+        result = self.__verif_content(self.pages, "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
         self.query = tmp
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['docx'] = (self.query, result)
@@ -155,7 +155,7 @@ class WebSearch :
                 return self.__data['xlsx'][1]
         tmp = self.query
         self.query = 'filetype:xlsx ' + self.query
-        result = self.__verif_content(self.pages, "vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        result = self.__verif_content(self.pages, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
         self.query = tmp
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['xlsx'] = (self.query, result)
@@ -172,7 +172,7 @@ class WebSearch :
                 return self.__data['pptx'][1]
         tmp = self.query
         self.query = 'filetype:pptx ' + self.query
-        result = self.__verif_content(self.pages, "vnd.openxmlformats-officedocument.presentationml.presentation")
+        result = self.__verif_content(self.pages, "application/vnd.openxmlformats-officedocument.presentationml.presentation")
         self.query = tmp
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['pptx'] = (self.query, result)
@@ -189,7 +189,7 @@ class WebSearch :
                 return self.__data['odt'][1]
         tmp = self.query
         self.query = 'filetype:odt ' + self.query
-        result = self.__verif_content(self.pages, "vnd.oasis.opendocument.text")
+        result = self.__verif_content(self.pages, "application/vnd.oasis.opendocument.text")
         self.query = tmp
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['odt'] = (self.query, result)
@@ -206,7 +206,7 @@ class WebSearch :
                 return self.__data['ods'][1]
         tmp = self.query
         self.query = 'filetype:ods ' + self.query
-        result = self.__verif_content(self.pages, "vnd.oasis.opendocument.spreadsheet")
+        result = self.__verif_content(self.pages, "application/vnd.oasis.opendocument.spreadsheet")
         self.query = tmp
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['ods'] = (self.query, result)
@@ -224,9 +224,30 @@ class WebSearch :
                 return self.__data['kml'][1]
         tmp = self.query
         self.query = 'filetype:kml ' + self.query
-        result = self.__verif_content(self.pages, "vnd.google-earth.kml+xml")
+        result = self.__verif_content(self.pages, "application/vnd.google-earth.kml+xml")
         self.query = tmp
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data['kml'] = (self.query, result)
+        return result
+
+    def custom_search(self, extension='pdf', mimetype='pdf'):
+        '''
+            Fonction pour recuperer des fichiers en fonction
+            de l'extension voulu et des type de mime que ce dernier utilise
+            
+            Keyword arguments:
+            extension -- The file's extension (default pdf)
+            mimetype -- The mimetype that match the extension (default pdf)
+        '''
+         #  On verifie que les resultats n'est pas deja enregistrer.
+        if self.__data.get(extension):
+            if self.__data[extension][0] == self.query:
+                return self.__data[extension][1]
+        tmp = self.query
+        self.query = f'filetype:{extension} {self.query}'
+        result = self.__verif_content(self.pages, mimetype)
+        self.query = tmp
+         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+        self.__data[extension] = (self.query, result)
         return result
 
