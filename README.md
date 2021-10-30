@@ -210,6 +210,21 @@ http://www.justice.gouv.fr/art_pix/Stat_RSJ_12.7_Civil_Les_tribunaux_de_commerce
 https://www.insee.fr/fr/metadonnees/source/fichier/Precision-principaux-indicateurs-crise-sanitaire-2020.ods
 ```
 
+### ODP results
+```python
+from websearch import WebSearch
+web = WebSearch('Renaissance')
+documents = web.odp
+for doc in documents[:2]:
+   print(doc)
+```
+
+```
+[RESULTS]
+http://ekladata.com/9sHTcbLYfwbNGKU9cpnZXjlsbfA/17-Art-Renaissance.odp
+https://www.college-yvescoppens-malestroit.ac-rennes.fr/sites/college-yvescoppens-malestroit.ac-rennes.fr/IMG/odp/diapo-presentation-voyage-5e.odp
+```
+
 ### KML results
 ```python
 from websearch import WebSearch
