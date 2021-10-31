@@ -241,7 +241,7 @@ https://www.ngoaidmap.org/downloads?doc=kml&name=association-intercooperation-ma
 https://ngoaidmap.org/downloads?doc=kml&name=nemp-madagascar-cyclone-enawo-response_projects&projects%5B%5D=20655&status=active
 ```
 
-### CUSTOM search
+### CUSTOM results
 
 For other extensions, not present, use the `custom` function
 
@@ -250,7 +250,7 @@ Second arg is explained [here](https://github.com/WebSearch/pull/4)
 ```python
 from websearch import WebSearch
 web = WebSearch('Biologie')
-ps_documents = web.custom_search('ps', 'application/postscript')
+ps_documents = web.custom('ps', 'application/postscript')
 for doc in ps_documents[:3]:
    print(doc)
 ```
