@@ -253,7 +253,7 @@ class WebSearch :
         self.__data['kml'] = (self.query, result)
         return result
 
-    def custom_search(self, extension='pdf', mimetype='application/pdf'):
+    def custom(self, extension='pdf', mimetype='application/pdf'):
         '''
             Fonction pour recuperer des fichiers en fonction
             de l'extension voulu et des type de mime que ce dernier utilise
@@ -273,3 +273,6 @@ class WebSearch :
          #  Sauvegarde des resultats pour optimiser la prochaine même appel.
         self.__data[extension] = (self.query, result)
         return result
+
+    def custom_search(self, *args, **kwargs):
+        raise Exception("`custom_search` is deprecated since v1.0.4, use `custom` instead")
