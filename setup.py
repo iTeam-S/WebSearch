@@ -18,5 +18,8 @@ setuptools.setup(
     ],                                      # Information to filter the project on PyPi website
     python_requires='>=3.6', 
     py_modules=["websearch"],              # Name of the python package
-    install_requires=["BeautifulSoup4", "requests"]                     # Install other dependencies if any
+    install_requires=["BeautifulSoup4", "requests"],                  # Install other dependencies if any
+    package_data = {
+        'extension': ['*.json']
+    }         
 )

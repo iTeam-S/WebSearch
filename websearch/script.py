@@ -2,6 +2,11 @@ import urllib.parse
 from bs4 import BeautifulSoup
 from requests import get, head
 
+import os
+import json
+
+__location__ = os.path.dirname(os.path.abspath(__file__))
+
 class WebSearch :
     '''
         Module permettant de prendre les différents lien sur le web.
@@ -253,7 +258,7 @@ class WebSearch :
         self.__data['kml'] = (self.query, result)
         return result
 
-    def custom(self, extension='pdf', mimetype='application/pdf'):
+    def custom(self, extension='pdf', mimetype=None):
         '''
             Fonction pour recuperer des fichiers en fonction
             de l'extension voulu et des type de mime que ce dernier utilise
@@ -268,11 +273,21 @@ class WebSearch :
                 return self.__data[extension][1]
         tmp = self.query
         self.query = f'filetype:{extension} {self.query}'
-        result = self.__verif_content(self.pages, mimetype)
-        self.query = tmp
-         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
-        self.__data[extension] = (self.query, result)
-        return result
+
+        if not mimetype:
+            with open(os.path.join(__location__, 'extension.json')) as file:
+                mimetype = json.load(file).get(extension)
+
+        if mimetype:
+            result = self.__verif_content(self.pages, mimetype)
+            self.query = tmp
+            #  Sauvegarde des resultats pour optimiser la prochaine même appel.
+            self.__data[extension] = (self.query, result)
+            return result
+        else:
+            return """Can't find mimetype that match this extension\n
+                Please provide the mimetypes as arguments.
+            """
 
     def custom_search(self, *args, **kwargs):
         raise Exception("`custom_search` is deprecated since v1.0.4, use `custom` instead")
