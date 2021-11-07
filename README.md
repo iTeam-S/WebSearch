@@ -271,7 +271,7 @@ https://www.crstra.dz/telechargement/pnr/ps/environnement/fadel-djamel.ps
 ```
 Exemple for page:
    ```
-   curl http://<host>:<port>/v1/page/botoravony+arleme
+   curl http://<host>:<port>/v1/pages/botoravony+arleme
 
    [RESPONSE]
    {
@@ -283,7 +283,7 @@ Exemple for page:
 
 Exemple for image:
 ```
-   curl http://<host>:<port>/v1/image/one+piece
+   curl http://<host>:<port>/v1/images/one+piece
 
    [RESPONSE]
    {
@@ -298,7 +298,8 @@ Exemple for image:
    }
 ```
 
-Exemple for search by extension:
+Search by extension : `curl http://<host>:<port>/v1/<query>~<extension>`
+Exemple : 
 ```
    curl http://<host>:<port>/v1/madagascar+antananarivo~kml
 
