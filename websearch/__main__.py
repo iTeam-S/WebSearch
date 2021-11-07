@@ -10,13 +10,15 @@ import sys
 
 server = Flask(__name__)
 
+
 @server.errorhandler(404)
 def page_not_found(e):
-    return """                                                  
-        Can't find what you want. 
-        Please change the query or the extensions                  
+    return """
+        Can't find what you want.
+        Please change the query or the extensions
     """
-    
+
+
 @server.route('/v1/images/<string:query>')
 def websearch_image(query):
     res = None
@@ -26,7 +28,7 @@ def websearch_image(query):
     except error as e:
         print(e)
         return "Error 500, Something Wrong"
-    return {res.index(link):link for link in res} if res else redirect('/404')
+    return {res.index(link): link for link in res} if res else redirect('/404')
 
 
 @server.route('/v1/pages/<string:query>')
@@ -38,7 +40,8 @@ def websearch_page(query):
     except error as e:
         print(e)
         return "Error 500, Something Wrong"
-    return {res.index(link):link for link in res} if res else redirect('/404')
+    return {res.index(link): link for link in res} if res else redirect('/404')
+
 
 @server.route('/v1/<string:query>')
 def websearch(query):
@@ -54,7 +57,8 @@ def websearch(query):
         print(e)
         return "Error 500, Something Wrong"
 
-    return {res.index(link):link for link in res} if res and type(res) == list else redirect('/404')
+    return {res.index(link): link for link in res} \
+        if res and type(res) == list else redirect('/404')
 
 
 if __name__ == '__main__':
@@ -62,15 +66,15 @@ if __name__ == '__main__':
     port = int(sys.argv[2]) if len(sys.argv) == 3 else 7888
 
     print(f'''
- _    _   _____   _____   _____   _____    ___    _____   ____    _   _  
-| |  | | |  ___| | ___ \ /  ___| |  ___|  / _ \  | ___ \ /  __ \ | | | | 
-| |  | | | |__   | |_/ / \ `--.  | |__   / /_\ \ | |_/ / | /  \/ | |_| | 
-| |/\| | |  __|  | ___ \  `--. \ |  __|  |  _  | |    /  | |     |  _  | 
+ _    _   _____   _____   _____   _____    ___    _____   ____    _   _
+| |  | | |  ___| | ___ \ /  ___| |  ___|  / _ \  | ___ \ /  __ \ | | | |
+| |  | | | |__   | |_/ / \ `--.  | |__   / /_\ \ | |_/ / | /  \/ | |_| |
+| |/\| | |  __|  | ___ \  `--. \ |  __|  |  _  | |    /  | |     |  _  |
 \  /\  / | |___  | |_/ / /\__/ / | |___  | | | | | |\ \  | \__/\ | | | |
  \/  \/  \____/  \____/  \____/  \____/  \_| |_/ \_| \_|  \____/ \_| |_/
 
  Server deployed on {host}:{port}
-    ''')
+    ''')  # noqa: W605
 
-    SERVER = WSGIServer((host,port), server)
+    SERVER = WSGIServer((host, port), server)
     SERVER.serve_forever()

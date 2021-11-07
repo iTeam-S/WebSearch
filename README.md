@@ -299,6 +299,15 @@ Exemple for image:
 ```
 
 Search by extension : `curl http://<host>:<port>/v1/<query>~<extension>`
+
+Where extension is from this list: 
+
+```
+swf, pdf, ps, dwf, kml, kmz, gpx, hwp, htm, html, xls, xlsx,
+ppt, pptx, doc, docx, odp, ods, odt, rtf, svg, tex, txt, text,
+bas, c, cc, cpp, cxx, h, hpp, cs, java, pl, py, wml, wap, xml
+```
+
 Exemple : 
 ```
    curl http://<host>:<port>/v1/madagascar+antananarivo~kml
