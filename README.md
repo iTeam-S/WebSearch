@@ -300,7 +300,7 @@ Exemple for image:
 
 Exemple for search by extension:
 ```
-   curl http://<host>:<port>/v1/custom/madagascar+antananarivo~kml
+   curl http://<host>:<port>/v1/madagascar+antananarivo~kml
 
    [RESPONSE]
    {

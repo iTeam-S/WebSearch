@@ -19,7 +19,8 @@ setuptools.setup(
     python_requires='>=3.6', 
     py_modules=["websearch"],              # Name of the python package
     install_requires=["BeautifulSoup4", "requests"],                  # Install other dependencies if any
+    include_package_data=True,
     package_data = {
-        'extension': ['*.json']
+        '': ['*.json']
     }         
 )

@@ -8,16 +8,16 @@ from .script import WebSearch
 import sys
 
 
-APP = Flask(__name__)
+server = Flask(__name__)
 
-@APP.errorhandler(404)
+@server.errorhandler(404)
 def page_not_found(e):
     return """                                                  
         Can't find what you want. 
         Please change the query or the extensions                  
     """
     
-@APP.route('/v1/image/<string:query>')
+@server.route('/v1/images/<string:query>')
 def websearch_image(query):
     res = None
     try:
@@ -29,7 +29,7 @@ def websearch_image(query):
     return {res.index(link):link for link in res} if res else redirect('/404')
 
 
-@APP.route('/v1/page/<string:query>')
+@server.route('/v1/pages/<string:query>')
 def websearch_page(query):
     res = None
     try:
@@ -40,7 +40,7 @@ def websearch_page(query):
         return "Error 500, Something Wrong"
     return {res.index(link):link for link in res} if res else redirect('/404')
 
-@APP.route('/v1/custom/<string:query>')
+@server.route('/v1/<string:query>')
 def websearch(query):
     res = None
     try:
@@ -72,5 +72,5 @@ if __name__ == '__main__':
  Server deployed on {host}:{port}
     ''')
 
-    SERVER = WSGIServer((host,port),APP)
+    SERVER = WSGIServer((host,port), server)
     SERVER.serve_forever()
