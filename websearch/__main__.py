@@ -43,15 +43,11 @@ def websearch_page(query):
     return {res.index(link): link for link in res} if res else redirect('/404')
 
 
-@server.route('/v1/<string:query>')
-def websearch(query):
-    res = None
+@server.route('/v1/<string:ext>/<string:query>')
+def websearch(ext, query):
     try:
-        ext = None
-        q = query.replace('+', ' ')
-        if '~' in q:
-            ext, q = q[q.rfind('~')+1:], q[:q.rfind('~')]
-        web = WebSearch(q)
+        query = query.replace('+', ' ')
+        web = WebSearch(query)
         res = web.custom(extension=ext) if ext else web.custom()
     except error as e:
         print(e)
