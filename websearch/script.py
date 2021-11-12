@@ -165,8 +165,8 @@ class WebSearch:
         tmp = self.query
         self.query = 'filetype:docx ' + self.query
         result = self.__verif_content(
-            self.pages, "application/vnd.openxmlformats-officedocument\
-        .wordprocessingml.document")
+            self.pages, "application/vnd.openxmlformats-officedocument"
+                        ".wordprocessingml.document")
 
         self.query = tmp
         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
@@ -185,8 +185,8 @@ class WebSearch:
         tmp = self.query
         self.query = 'filetype:xlsx ' + self.query
         result = self.__verif_content(
-            self.pages, "application/vnd.openxmlformats-officedocument\
-        .spreadsheetml.sheet")
+            self.pages, "application/vnd.openxmlformats-officedocument"
+                        ".spreadsheetml.sheet")
         self.query = tmp
 
         #  Sauvegarde des resultats pour optimiser la prochaine même appel.
@@ -205,8 +205,8 @@ class WebSearch:
         self.query = 'filetype:pptx ' + self.query
 
         result = self.__verif_content(
-            self.pages, "application/vnd.openxmlformats-officedocument\
-        .presentationml.presentation")
+            self.pages, "application/vnd.openxmlformats-officedocument"
+                        ".presentationml.presentation")
         self.query = tmp
 
         # Sauvegarde des resultats pour optimiser la prochaine même appel.
