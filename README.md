@@ -298,7 +298,7 @@ Exemple for image:
    }
 ```
 
-Search by extension : `curl http://<host>:<port>/v1/<query>~<extension>`
+Search by extension : `curl http://<host>:<port>/v1/<extension>/<query>`
 
 Where extension is from this list: 
 
@@ -310,7 +310,7 @@ bas, c, cc, cpp, cxx, h, hpp, cs, java, pl, py, wml, wap, xml
 
 Exemple : 
 ```
-   curl http://<host>:<port>/v1/madagascar+antananarivo~kml
+   curl http://<host>:<port>/v1/kml/madagascar+antananarivo
 
    [RESPONSE]
    {
