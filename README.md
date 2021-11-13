@@ -1,5 +1,7 @@
 # WebSearch
 
+
+
 > Python module allowing you to do various searches for links on the Web.
 
 
@@ -8,6 +10,7 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/websearch-python?style=for-the-badge)](https://pypi.org/project/websearch-python/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/websearch-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/websearch-python/)
+
 
 
 
@@ -263,7 +266,10 @@ https://www.crstra.dz/telechargement/pnr/ps/environnement/fadel-djamel.ps
 ```
 
 
-### Deploye in Webserver
+## Webserver
+
+you can deploy as webserver and send an http request
+
 ```
    python -m websearch [host] [port]
       [*] default host : 0.0.0.0
