@@ -262,6 +262,63 @@ http://jfla.inria.fr/2002/actes/10-michel.ps
 https://www.crstra.dz/telechargement/pnr/ps/environnement/fadel-djamel.ps
 ```
 
+
+### Deploye in Webserver
+```
+   python -m websearch [host] [port]
+      [*] default host : 0.0.0.0
+      [*] default port : 7845 
+```
+Exemple for page:
+   ```
+   curl http://<host>:<port>/v1/pages/botoravony+arleme
+
+   [RESPONSE]
+   {
+      "0":"https://portfolio.iteam-s.mg/?id=2",
+      "1":"https://portfolio.iteam-s.mg/libs/cv/arleme.pdf",
+      "2":"https://madagascar.webcup.fr/team-webcup/iteams"
+   }
+```
+
+Exemple for image:
+```
+   curl http://<host>:<port>/v1/images/one+piece
+
+   [RESPONSE]
+   {
+   "0":"https://tse1.mm.bing.net/th?id=OIP.GlNk7idD3RCI_SYLiVzSBAHaE7",
+   "1":"https://tse2.mm.bing.net/th?id=OIP.uePUN5rwpB-7wicu1uxQcgHaFj",
+   "2":"https://tse2.mm.bing.net/th?id=OIP.dwWBU-A_6KPvvEYsL2nhVgHaFc",
+   "3":"https://tse1.mm.bing.net/th?id=OIP.5M8tKIhIWvbqGO1prhUGfAHaJ4",
+   .....
+   "43":"https://tse4.mm.bing.net/th?id=OIP.uvp3efwHRLDJnUWZ5KLWCwHaE8",
+   "44":"https://tse3.mm.bing.net/th?id=OIP.d_uUoc-8R13RZ1bb76yhZgHaKp",
+   "45":"https://tse1.mm.bing.net/th?id=OIP.cBWDvspBM036p6h4DS6RTAHaFj"
+   }
+```
+
+Search by extension : `curl http://<host>:<port>/v1/<extension>/<query>`
+
+Where extension is from this list: 
+
+```
+swf, pdf, ps, dwf, kml, kmz, gpx, hwp, htm, html, xls, xlsx,
+ppt, pptx, doc, docx, odp, ods, odt, rtf, svg, tex, txt, text,
+bas, c, cc, cpp, cxx, h, hpp, cs, java, pl, py, wml, wap, xml
+```
+
+Exemple : 
+```
+   curl http://<host>:<port>/v1/kml/madagascar+antananarivo
+
+   [RESPONSE]
+   {
+      "0":"https://ifl.francophonelibre.org/atelier/ActionOSMMG2019/wms/kml?layers=ActionOSMMG2019:MG_Antananarivo_pharmacy_point_OSM_20190427"
+   }
+```
+
+
 ## LICENSE
 
 MIT License
