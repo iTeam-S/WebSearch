@@ -37,6 +37,9 @@ for page in web('iTeam-$').pages[:2]:
 ```
 __________________________
 
+<details>
+   <summary style='font-size:24'>  FULL DOCUMENTATION </summary>
+
 ### Initialization
 
 ```python
@@ -323,10 +326,15 @@ Exemple :
    }
 ```
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gaetan1903)
+ </details>
 
-
-## LICENSE
+   
+   
+   
+_____________________________________________________________________  
+   
+ 
+## License
 
 MIT License
 
