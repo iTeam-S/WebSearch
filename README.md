@@ -11,8 +11,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/websearch-python?style=for-the-badge)](https://pypi.org/project/websearch-python/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/websearch-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/websearch-python/)
 
-
-
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gaetan1903)
 
 ## Installation
 
@@ -323,6 +322,8 @@ Exemple :
       "0":"https://ifl.francophonelibre.org/atelier/ActionOSMMG2019/wms/kml?layers=ActionOSMMG2019:MG_Antananarivo_pharmacy_point_OSM_20190427"
    }
 ```
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gaetan1903)
 
 
 ## LICENSE
