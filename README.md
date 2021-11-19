@@ -11,7 +11,6 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/websearch-python?style=for-the-badge)](https://pypi.org/project/websearch-python/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/websearch-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/websearch-python/)
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gaetan1903)
 
 ## Installation
 
@@ -349,9 +348,13 @@ Exemple :
  </details>
 
    
-   
-   
 _____________________________________________________________________  
+   
+   
+## Show your support
+ Give a star 🌟 if this project helped you!
+   
+ [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gaetan1903) 
    
  
 ## License
