@@ -21,7 +21,7 @@ setuptools.setup(
     python_requires='>=3.6',
     py_modules=["websearch"],                      # Name of the python package
     install_requires=[
-        "BeautifulSoup4", "requests", "gevent", "flask"],      # Install other dependencies if any
+        "BeautifulSoup4", "requests", "gevent", "flask"],  # depandance
     include_package_data=True,         # Include all data file with the package
     package_data={'': ['*.json']}
 )
