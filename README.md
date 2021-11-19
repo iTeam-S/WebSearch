@@ -353,6 +353,20 @@ Exemple :
    }
 ```
 
+You can use the parameter `limit` to limit results
+```
+   curl http://<host>:<port>/v1/images/one+piece?limit=4
+
+   [RESPONSE]
+   {
+   "0":"https://tse1.mm.bing.net/th?id=OIP.GlNk7idD3RCI_SYLiVzSBAHaE7",
+   "1":"https://tse2.mm.bing.net/th?id=OIP.uePUN5rwpB-7wicu1uxQcgHaFj",
+   "2":"https://tse2.mm.bing.net/th?id=OIP.dwWBU-A_6KPvvEYsL2nhVgHaFc",
+   "3":"https://tse1.mm.bing.net/th?id=OIP.5M8tKIhIWvbqGO1prhUGfAHaJ4"
+   }
+```
+
+
  </details>
 
    

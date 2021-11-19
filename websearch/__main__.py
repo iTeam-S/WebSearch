@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from http.client import error
-from flask import Flask, redirect
+from flask import Flask, redirect, request
 from gevent.pywsgi import WSGIServer
 from .script import WebSearch
 
@@ -21,6 +21,11 @@ def page_not_found(e):
 
 @server.route('/v1/images/<string:query>')
 def websearch_image(query):
+    limit = request.args.get('limit')
+    if limit and limit.isdigit():
+        limit = int(limit)
+    else:
+        limit = 100
     res = None
     try:
         query = query.replace('+', ' ')
@@ -28,11 +33,17 @@ def websearch_image(query):
     except error as e:
         print(e)
         return "Error 500, Something Wrong"
-    return {res.index(link): link for link in res} if res else redirect('/404')
+    return {res.index(link): link for link in res[:limit]} \
+        if res else redirect('/404')
 
 
 @server.route('/v1/pages/<string:query>')
 def websearch_page(query):
+    limit = request.args.get('limit')
+    if limit and limit.isdigit():
+        limit = int(limit)
+    else:
+        limit = 100
     res = None
     try:
         query = query.replace('+', ' ')
@@ -40,11 +51,17 @@ def websearch_page(query):
     except error as e:
         print(e)
         return "Error 500, Something Wrong"
-    return {res.index(link): link for link in res} if res else redirect('/404')
+    return {res.index(link): link for link in res[:limit]} \
+        if res else redirect('/404')
 
 
 @server.route('/v1/<string:ext>/<string:query>')
 def websearch(ext, query):
+    limit = request.args.get('limit')
+    if limit and limit.isdigit():
+        limit = int(limit)
+    else:
+        limit = 100
     try:
         query = query.replace('+', ' ')
         web = WebSearch(query)
@@ -53,7 +70,7 @@ def websearch(ext, query):
         print(e)
         return "Error 500, Something Wrong"
 
-    return {res.index(link): link for link in res} \
+    return {res.index(link): link for link in res[:limit]} \
         if res and type(res) == list else redirect('/404')
 
 
