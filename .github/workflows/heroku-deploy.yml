@@ -13,5 +13,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "websearch" 
+          heroku_app_name: "websearch-python" 
           heroku_email: "gaetan.s118@gmail.com"
