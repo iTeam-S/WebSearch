@@ -1,9 +1,9 @@
 name: Deploy on Heroku [CD]
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types:
+      - created
 
 jobs:
   build:
