@@ -15,13 +15,13 @@
 
 ## Installation
 
-```sh
+```properties
 pip3 install websearch-python
 ```
 
 ## Use
 
-### Quick Start
+### Quick Start as Module
 
 ```python
 from websearch import WebSearch as web
@@ -34,6 +34,26 @@ for page in web('iTeam-$').pages[:2]:
 
  https://iteam-s.mg/
  https://github.com/iTeam-S
+```
+
+
+### Quick Start as Webserver
+```properties
+# run webserver 
+python -m websearch 0.0.0.0 7845
+```
+
+```sh
+# requests contents
+curl http://0.0.0.0:7845/v1/pages/botoravony+arleme
+```
+
+ ```json
+ {
+   "0":"https://portfolio.iteam-s.mg/?id=2",
+   "1":"https://portfolio.iteam-s.mg/libs/cv/arleme.pdf",
+   "2":"https://madagascar.webcup.fr/team-webcup/iteams"
+  }
 ```
 __________________________
 
@@ -268,7 +288,7 @@ https://www.crstra.dz/telechargement/pnr/ps/environnement/fadel-djamel.ps
 ```
 
 
-## Webserver
+### Webserver
 
 you can deploy as webserver and send an http request
 
