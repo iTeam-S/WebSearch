@@ -7,10 +7,11 @@
 
 [![Python application](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml/badge.svg)](https://github.com/iTeam-S/WebSearch/actions/workflows/python-test.yml)
 [![Publish](https://github.com/iTeam-S/WebSearch/actions/workflows/pip-upload.yml/badge.svg)](https://github.com/iTeam-S/WebSearch/actions/workflows/pip-upload.yml)
+[![Deploy on Heroku [CD]](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://websearch-python.herokuapp.com/)
 
 [![PyPI - Version](https://img.shields.io/pypi/v/websearch-python?style=for-the-badge)](https://pypi.org/project/websearch-python/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/websearch-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/websearch-python/)
-[![Deploy on Heroku [CD]](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://websearch-python.herokuapp.com/)
+
 
 
 ## Installation
@@ -58,7 +59,7 @@ curl http://0.0.0.0:7845/v1/pages/botoravony+arleme
 
 ### Use Deployed Version
 ```sh
-curl https://websearch-python.herokuapp.com//v1/pages/botoravony+arleme
+curl https://websearch-python.herokuapp.com/v1/pages/botoravony+arleme
 ```
 
 __________________________
