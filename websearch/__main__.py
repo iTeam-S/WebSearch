@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from http.client import error
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, jsonify
 from gevent.pywsgi import WSGIServer
 from .script import WebSearch
 
@@ -33,7 +33,7 @@ def websearch_image(query):
     except error as e:
         print(e)
         return "Error 500, Something Wrong"
-    return {res.index(link): link for link in res[:limit]} \
+    return jsonify(res[:limit]) \
         if res else redirect('/404')
 
 
@@ -51,7 +51,7 @@ def websearch_page(query):
     except error as e:
         print(e)
         return "Error 500, Something Wrong"
-    return {res.index(link): link for link in res[:limit]} \
+    return jsonify(res[:limit]) \
         if res else redirect('/404')
 
 
@@ -70,7 +70,7 @@ def websearch(ext, query):
         print(e)
         return "Error 500, Something Wrong"
 
-    return {res.index(link): link for link in res[:limit]} \
+    return jsonify(res[:limit]) \
         if res and type(res) == list else redirect('/404')
 
 
