@@ -76,7 +76,7 @@ def websearch(ext, query):
 
 if __name__ == '__main__':
     host = sys.argv[1] if len(sys.argv) == 2 else '0.0.0.0'
-    port = int(sys.argv[2]) if len(sys.argv) == 3 else 7888
+    port = int(sys.argv[2]) if len(sys.argv) == 3 else 7845
 
     print(f'''
  _    _   _____   _____   _____   _____    ___    _____   ____    _   _
