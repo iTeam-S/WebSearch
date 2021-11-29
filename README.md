@@ -18,6 +18,10 @@
 ```properties
 pip3 install websearch-python
 ```
+**OR** you can install dev version
+```properties
+pip3 install https://github.com/iTeam-S/WebSearch/archive/refs/heads/main.zip
+```
 
 ## Use
 
