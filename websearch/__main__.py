@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 
+import argparse
 from http.client import error
-from flask import Flask, redirect, request, jsonify
-from gevent.pywsgi import WSGIServer
 from .script import WebSearch
-
-import sys
-
-
-server = Flask(__name__)
+from gevent.pywsgi import WSGIServer
+from flask import Flask, redirect, request, jsonify
 
 
-@server.errorhandler(404)
+webserver = Flask(__name__)
+
+
+@webserver.errorhandler(404)
 def page_not_found(e):
     return """
         Can't find what you want.
@@ -19,45 +18,9 @@ def page_not_found(e):
     """
 
 
-@server.route('/v1/images/<string:query>')
-def websearch_image(query):
-    limit = request.args.get('limit')
-    if limit and limit.isdigit():
-        limit = int(limit)
-    else:
-        limit = 100
-    res = None
-    try:
-        query = query.replace('+', ' ')
-        res = WebSearch(query).images
-    except error as e:
-        print(e)
-        return "Error 500, Something Wrong"
-    return jsonify(res[:limit]) \
-        if res else redirect('/404')
-
-
-@server.route('/v1/pages/<string:query>')
-def websearch_page(query):
-    limit = request.args.get('limit')
-    if limit and limit.isdigit():
-        limit = int(limit)
-    else:
-        limit = 100
-    res = None
-    try:
-        query = query.replace('+', ' ')
-        res = WebSearch(query).pages
-    except error as e:
-        print(e)
-        return "Error 500, Something Wrong"
-    return jsonify(res[:limit]) \
-        if res else redirect('/404')
-
-
-@server.route('/v1/<string:ext>/<string:query>')
+@webserver.route('/<string:ext>/<string:query>')
 def websearch(ext, query):
-    limit = request.args.get('limit')
+    limit = request.args.get('limit', '')
     if limit and limit.isdigit():
         limit = int(limit)
     else:
@@ -65,19 +28,33 @@ def websearch(ext, query):
     try:
         query = query.replace('+', ' ')
         web = WebSearch(query)
-        res = web.custom(extension=ext) if ext else web.custom()
+        if ext == 'pages':
+            res = WebSearch(query).pages
+        elif ext == 'images':
+            res = WebSearch(query).images
+        else:
+            res = web.custom(extension=ext)
     except error as e:
         print(e)
-        return "Error 500, Something Wrong"
+        return "Error 500, Something Wrong", 500
 
     return jsonify(res[:limit]) \
         if res and type(res) == list else redirect('/404')
 
 
 if __name__ == '__main__':
-    host = sys.argv[1] if len(sys.argv) == 2 else '0.0.0.0'
-    port = int(sys.argv[2]) if len(sys.argv) == 3 else 7845
+    parser = argparse.ArgumentParser(
+        description='Webserver version for websearch-python'
+    )
+    parser.add_argument(
+        '--host', help='HOST for server, default: 0.0.0.0', default='0.0.0.0'
+    )
+    parser.add_argument(
+        '--port', type=int, help='PORT for server. default 7845', default=7845
+    )
+    args = parser.parse_args()
 
+    print(args.host)
     print(f'''
  _    _   _____   _____   _____   _____    ___    _____   ____    _   _
 | |  | | |  ___| | ___ \ /  ___| |  ___|  / _ \  | ___ \ /  __ \ | | | |
@@ -86,8 +63,8 @@ if __name__ == '__main__':
 \  /\  / | |___  | |_/ / /\__/ / | |___  | | | | | |\ \  | \__/\ | | | |
  \/  \/  \____/  \____/  \____/  \____/  \_| |_/ \_| \_|  \____/ \_| |_/
 
- Server deployed on {host}:{port}
+ Server listening on {args.host}:{args.port}
     ''')  # noqa: W605
 
-    SERVER = WSGIServer((host, port), server)
+    SERVER = WSGIServer((args.host, args.port), webserver)
     SERVER.serve_forever()

@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="websearch-python",                  # This is the name of the package
-    version="1.1.3",                              # The initial release version
-    author="iTeam-$",                                 # Full name of the author
+    version="1.2.0-dev",                      # The initial release version
+    author="iTeam-$",                         # Full name of the author
     description="""
         Python module allowing you to do various searches for links on the Web.
     """,

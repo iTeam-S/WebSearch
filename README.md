@@ -15,11 +15,11 @@
 
 ## Installation
 
-```properties
+```s
 pip3 install websearch-python
 ```
 **OR** you can install dev version
-```properties
+```s
 pip3 install https://github.com/iTeam-S/WebSearch/archive/refs/heads/main.zip
 ```
 
@@ -42,14 +42,14 @@ for page in web('iTeam-$').pages[:2]:
 
 
 ### Quick Start as Webserver
-```properties
+```s
 # run webserver 
-python -m websearch 0.0.0.0 7845
+python -m websearch --host 0.0.0.0 --port 7845
 ```
 
-```sh
+```s
 # requests contents
-curl http://0.0.0.0:7845/v1/pages/botoravony+arleme
+curl http://0.0.0.0:7845/pages/botoravony+arleme
 ```
 
  ```json
@@ -61,8 +61,8 @@ curl http://0.0.0.0:7845/v1/pages/botoravony+arleme
 ```
 
 ### Use Deployed Version
-```sh
-curl https://websearch-python.herokuapp.com/v1/pages/botoravony+arleme
+```s
+curl https://websearch-python.herokuapp.com/pages/botoravony+arleme
 ```
 
 __________________________
@@ -292,6 +292,7 @@ for doc in ps_documents[:3]:
 
 ```
 [RESULTS]
+
 http://irma.math.unistra.fr/~fbertran/Master1_2020_2/L3Court.ps
 http://jfla.inria.fr/2002/actes/10-michel.ps
 https://www.crstra.dz/telechargement/pnr/ps/environnement/fadel-djamel.ps
@@ -302,14 +303,14 @@ https://www.crstra.dz/telechargement/pnr/ps/environnement/fadel-djamel.ps
 
 you can deploy as webserver and send an http request
 
-```
-   python -m websearch [host] [port]
+```s
+   python -m websearch --host [host] --port [port]
       [*] default host : 0.0.0.0
       [*] default port : 7845 
 ```
 Exemple for page:
-   ```
-   curl http://<host>:<port>/v1/pages/botoravony+arleme
+   ```s
+   curl http://<host>:<port>/pages/botoravony+arleme
 
    
    [
@@ -321,8 +322,8 @@ Exemple for page:
 ```
 
 Exemple for image:
-```
-   curl http://<host>:<port>/v1/images/one+piece
+```s
+   curl http://<host>:<port>/images/one+piece
 
 
    [
@@ -337,7 +338,7 @@ Exemple for image:
    }
 ```
 
-Search by extension : `curl http://<host>:<port>/v1/<extension>/<query>`
+Search by extension : `curl http://<host>:<port>/<extension>/<query>`
 
 Where extension is from this list: 
 
@@ -348,8 +349,8 @@ bas, c, cc, cpp, cxx, h, hpp, cs, java, pl, py, wml, wap, xml
 ```
 
 Exemple : 
-```
-   curl http://<host>:<port>/v1/kml/madagascar+antananarivo
+```s
+   curl http://<host>:<port>/kml/madagascar+antananarivo
 
 
    [
@@ -359,7 +360,7 @@ Exemple :
 
 You can use the parameter `limit` to limit results
 ```
-   curl http://<host>:<port>/v1/images/one+piece?limit=4
+   curl http://<host>:<port>/images/one+piece?limit=4
 
 
    [
