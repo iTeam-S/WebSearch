@@ -18,6 +18,11 @@ def page_not_found(e):
     """
 
 
+@webserver.route('/v1/<string:ext>/<string:query>')
+def old_route(ext, query):
+    return redirect(f'/{ext}/{query}', code=301)
+
+
 @webserver.route('/<string:ext>/<string:query>')
 def websearch(ext, query):
     limit = request.args.get('limit', '')
