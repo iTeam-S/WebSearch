@@ -42,6 +42,14 @@ for page in web('iTeam-$').pages[:2]:
 
 
 ### Quick Start as Webserver
+
+```s
+# run webserver 
+websearch --host 0.0.0.0 --port 7845
+```
+
+**OR**
+
 ```s
 # run webserver 
 python -m websearch --host 0.0.0.0 --port 7845
