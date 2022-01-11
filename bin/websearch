@@ -15,7 +15,7 @@ def page_not_found(e):
     return """
         Can't find what you want.
         Please change the query or the extensions
-    """
+    """, 404
 
 
 @webserver.route('/v1/<string:ext>/<string:query>')
