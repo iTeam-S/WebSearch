@@ -7,9 +7,7 @@ setuptools.setup(
     name="websearch-python",                  # This is the name of the package
     version="1.2.1",                      # The initial release version
     author="iTeam-$",                         # Full name of the author
-    description="""
-        Python module allowing you to do various searches for links on the Web.
-    """,
+    description="Module allowing you to do various searches for links on the Web",
     long_description=long_description,  # Long description read from the readme
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),  # List of all modules to be installed
