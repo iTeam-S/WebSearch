@@ -32,7 +32,7 @@ def websearch(ext, query):
         limit = 100
     try:
         query = query.replace('+', ' ')
-        web = WebSearch(query)
+        web = WebSearch(query, **dict(request.args))
         if ext == 'pages':
             res = WebSearch(query).pages
         elif ext == 'images':

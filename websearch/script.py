@@ -21,7 +21,7 @@ class WebSearch:
         'User-Agent': 'Googlebot/2.1 (http://www.googlebot.com/bot.html)'
         }
 
-    def __init__(self, query, verif=True, **kwargs):
+    def __init__(self, query, **kwargs):
         # verifier si la recherche est de type mutliple.
         if isinstance(query, list):
             self.query = "'"
@@ -35,7 +35,7 @@ class WebSearch:
             self.query = f"site:{kwargs.get('site')} {self.query}"
 
         # Utiliser pour la verification des liens.
-        self.verif = verif
+        self.verif = kwargs.get('verif', True)
         # utiliser pour l'optimisation
         self.__data = {}
 

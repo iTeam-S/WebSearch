@@ -379,6 +379,8 @@ You can use the parameter `limit` to limit results
    ]
 
 ```
+##### Note: `site` and `verif` parameter in module can be given in url parameter
+`curl http://<host>:<port>/pdf/statut?verif=false&site=iteam-s.mg`
 
 
  </details>
